@@ -24,7 +24,13 @@ f.elementor-839 .elementor-element.elementor-element-4d05ddf>.elementor-containe
     font-weight: 500;
     font-size: 24px;
     padding-left: 13px;
+
 }
+html[lang="ar"] .elementor-839 .elementor-element.elementor-element-e1fecbe .elementor-heading-title {
+    direction: rtl !important;
+    text-align: right !important;
+}
+
 
 .elementor-839 .elementor-element.elementor-element-ac16332 {
     --divider-border-style: solid;
@@ -213,6 +219,7 @@ f.elementor-839 .elementor-element.elementor-element-4d05ddf>.elementor-containe
     margin-bottom: 0px;
 }
 
+
 .elementor-bc-flex-widget .elementor-839 .elementor-element.elementor-element-4b5b28f.elementor-column .elementor-column-wrap {
     align-items: flex-end;
 }
@@ -220,6 +227,12 @@ f.elementor-839 .elementor-element.elementor-element-4d05ddf>.elementor-containe
 .elementor-839 .elementor-element.elementor-element-4b5b28f.elementor-column.elementor-element[data-element_type="column"]>.elementor-column-wrap.elementor-element-populated>.elementor-widget-wrap {
     align-content: flex-end;
     align-items: flex-end;
+}
+
+@media (max-width: 1025px) {
+    .elementor-839 .elementor-element.elementor-element-4b5b28f.elementor-column.elementor-element[data-element_type="column"]>.elementor-column-wrap.elementor-element-populated>.elementor-widget-wrap {
+        top: -57px;
+    }
 }
 
 .elementor-839 .elementor-element.elementor-element-4b5b28f>.elementor-element-populated {
@@ -538,6 +551,11 @@ f.elementor-839 .elementor-element.elementor-element-4d05ddf>.elementor-containe
     font-size: 26px;
     font-weight: 400;
 }
+html[lang="ar"] .elementor-839 .elementor-element.elementor-element-eedc1b3 .elementor-heading-title{
+    direction: rtl !important;
+    text-align: right !important;
+}
+
 
 .elementor-839 .elementor-element.elementor-element-1ceea34 {
     --divider-border-style: solid;
@@ -593,8 +611,8 @@ f.elementor-839 .elementor-element.elementor-element-4d05ddf>.elementor-containe
 .elementor-839 .elementor-element.elementor-element-d2162c1 .elementor-post{
     transition: all 0.3s ease;
     border: 1px solid #c5ebff;
-    height: 358px;
     background: linear-gradient(to top, rgb(0 0 0 / 15%) 0%, rgb(0 0 0) 100%);
+    padding-bottom: 20px;
 }
 .elementor-839 .elementor-element.elementor-element-d2162c1 .elementor-post:hover {
     transform: translateY(-10px);
@@ -728,6 +746,7 @@ f.elementor-839 .elementor-element.elementor-element-4d05ddf>.elementor-containe
     border-color: #FFFFFF;
     box-shadow: 0px 7px 15px 0px rgba(0, 0, 0, 0.2);
     transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+    border-radius: 28px;
 }
 
 .elementor-839 .elementor-element.elementor-element-370222e>.elementor-element-populated>.elementor-background-overlay {
@@ -740,10 +759,10 @@ f.elementor-839 .elementor-element.elementor-element-4d05ddf>.elementor-containe
 
 .elementor-839 .elementor-element.elementor-element-a6829ff {
     padding: 30px 0px 50px 0px;
-    background-image: url(Gemini_Generated_Image_rrqubfrrqubfrrqu.png);
     background-size: cover;
     padding-top: 50px;
     padding-bottom: 115px;
+    background: rgba(240, 248, 255, 0.466);
 }
 
 .elementor-839 .elementor-element.elementor-element-83a1129 .elementor-heading-title {
@@ -756,6 +775,12 @@ f.elementor-839 .elementor-element.elementor-element-4d05ddf>.elementor-containe
     padding-bottom: 2px;
     padding-top: 36px;
 }
+
+html[lang="ar"] .elementor-839 .elementor-element.elementor-element-83a1129 .elementor-heading-title {
+    direction: rtl !important;
+}
+
+
 
 .elementor-839 .elementor-element.elementor-element-964202f {
     display: none;
@@ -965,8 +990,9 @@ f.elementor-839 .elementor-element.elementor-element-4d05ddf>.elementor-containe
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
-    color: black;
+    color: #083971;
     padding: 6px 0 22px 6px;
+    font-weight: 600;
 }
 
 .elementor-widget-posts .elementor-post__excerpt p {
@@ -976,7 +1002,8 @@ f.elementor-839 .elementor-element.elementor-element-4d05ddf>.elementor-containe
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     padding-left: 8px;
-    color: black;
+    color: #083971;
+    font-size: large;
 }
 
 /* End custom CSS */
@@ -1290,6 +1317,26 @@ f.elementor-839 .elementor-element.elementor-element-4d05ddf>.elementor-containe
     margin-bottom: 20px;
     height: 187px;
 }
+@media (max-width:767px) {
+    .reason-box{
+        padding-left: 15px;
+        min-width: 330px !important;
+    }
+    .reason-box h3 {
+    font-size: 20px !important;
+    
+    }
+    .reason-box p {
+
+    max-width: 100% !important;
+    }
+    .reasons-wrapper{
+        padding: 40px 0px 40px 44px;
+    }
+
+}
+
+
 .reason-box .s1{
     font-size: 49px;
     color: #00e5ff;

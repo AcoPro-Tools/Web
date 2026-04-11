@@ -1,7 +1,7 @@
 .elementor-453 .elementor-element.elementor-element-e60ff31:not(.elementor-motion-effects-element-type-background),
 .elementor-453 .elementor-element.elementor-element-e60ff31>.elementor-motion-effects-container>.elementor-motion-effects-layer {
     background-color: #0F0F0F;
-    background-image: url("../images/2021/06/dingtu-img2.jpg");
+    background-image: url("../images/2021/06/dingtu-img2.png");
     background-position: center center;
     background-size: cover;
 }
@@ -263,7 +263,6 @@
 }
 
 .elementor-453 .elementor-element.elementor-element-2c24ee6 .elementor-divider {
-    text-align: left;
     padding-top: 10px;
     padding-bottom: 10px;
 }

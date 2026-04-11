@@ -41,6 +41,31 @@
 <link rel='stylesheet' type='text/css' href='../../css/all.css'/>
 <link rel='stylesheet' type='text/css' href='../../css/iconfont.css'/>
 <link rel='stylesheet' href='../../css/post-type.css' type='text/css' />
+
+<script>
+// 1. تنفيذ فوري (صياد اللغة): بيجهز الكوكيز في أجزاء من الثانية قبل تحميل الـ DOM
+(function() {
+    var savedLang = localStorage.getItem("site_lang");
+    if (savedLang && savedLang !== 'en') {
+        var domain = window.location.hostname;
+        document.cookie = "googtrans=/en/" + savedLang + "; path=/; domain=" + domain;
+        document.cookie = "googtrans=/en/" + savedLang + "; path=/";
+    }
+})();
+
+// 2. تهيئة محرك جوجل
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'ar,en',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false,
+        multilanguagePage: true // تسريع التعرف على اللغات
+    }, 'google_translate_element');
+}
+</script>
+<script async src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 </head>
 <style>
 /*PC product list a line number start*/
@@ -85,7 +110,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>
         <div class="hnav-60">
           <ul id="menu-toubuzhudaohang" class="menu">
             <li id="menu-item-454" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-454"><a href="../../index.html" aria-current="page" rel="nofollow">Home</a></li>
-            <li id="menu-item-374" class="menu-item menu-item-type-post_type_archive menu-item-object-product menu-item-has-children menu-item-374"><a target="_blank" href="../index.html">All Products</a>
+            <li id="menu-item-374" class="menu-item menu-item-type-post_type_archive menu-item-object-product menu-item-has-children menu-item-374"><a  href="../index.html">All Products</a>
               <ul class="sub-menu">
                 
                 <li id="menu-item-2" class="menu-item menu-item-type-taxonomy menu-item-object-pro_cat menu-item-has-children menu-item-2"><a href="../../pro_cat/milling-inserts/index.html">Milling Inserts</a>
@@ -284,6 +309,43 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>
             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item"><a href="../../article/index.html">News</a></li>
             <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item"><a href="../../about/index.html" rel="nofollow">About Us</a></li>
             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item"><a href="../../contact/index.html" rel="nofollow">Contact Us</a></li>
+
+
+                  <div id="google_translate_element" style="display:none;"></div>
+
+<div class="lang-switcher">
+    <button onclick="changeLang('ar')">العربية</button>
+    <button onclick="changeLang('en')">English</button>
+</div>
+
+<script>
+function changeLang(lang) {
+    // حفظ الاختيار
+    localStorage.setItem("site_lang", lang);
+    var domain = window.location.hostname;
+    
+    // ضبط الكوكيز فوراً مع دعم الـ Subdomains
+    if (lang === 'en') {
+        document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + domain;
+        document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+    } else {
+        document.cookie = "googtrans=/en/" + lang + "; path=/; domain=" + domain;
+        document.cookie = "googtrans=/en/" + lang + "; path=/";
+    }
+
+    // إعادة تحميل سريعة لتطبيق اللغة
+    location.reload();
+}
+
+// تحديث النصوص (اختياري لو محتاجه)
+window.addEventListener("DOMContentLoaded", () => {
+    var savedLang = localStorage.getItem("site_lang") || 'en';
+    var langText = document.getElementById('current-lang-text');
+    if (langText) {
+        langText.innerText = (savedLang === 'ar') ? 'العربية' : 'Language';
+    }
+});
+</script>
           </ul>
         </div>
         <!-- search -->
@@ -583,7 +645,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>
 <p align="center"><img src="../../UploadFiles/other/processabf5.jpg?x-oss-process=style/webp" /></p>
 <p>
 <p class="infotitle">Packing &amp; Delivery</p>
-<img class="aligncenter size-full wp-image-1598" style="margin-bottom: 40px;" src="../../images/2021/05/yisitebaozhuangabf5.jpg?x-oss-process=style/webp" alt="" width="900" height="450" /><img class="aligncenter size-full wp-image-883" src="../../images/2021/05/0-yunshu-1abf5.jpg?x-oss-process=style/webp" alt="" width="900" height="450" />
+<!-- photo--><img class="aligncenter size-full wp-image-883" src="../../images/2021/05/0-yunshu-1abf5.jpg?x-oss-process=style/webp" alt="" width="900" height="450" />
 <p class="infotitle">Our Services</p>
 <table style="border-collapse: collapse; width: 100%;">
   <tbody>
@@ -647,7 +709,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>
           </div>
         </div>
       </section>
-      <section class="elementor-element elementor-element-8956ab4 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" style="background: linear-gradient(135deg, #a3bfd4 0%, #1d3155 50%, #0a162a 100%);" data-id="8956ab4" data-element_type="section">
+      <section class="elementor-element elementor-element-8956ab4 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section"  style="background-image: url(../../css/Gemini_Generated_Image_fbfk83fbfk83fbfk2.png); background-size: contain;" data-id="8956ab4" data-element_type="section">
         <div class="elementor-container elementor-column-gap-default">
           <div class="elementor-row">
             <div class="elementor-element elementor-element-6544343 elementor-column elementor-col-100 elementor-top-column" data-id="6544343" data-element_type="column">
@@ -956,18 +1018,25 @@ var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false
 <script type="text/javascript" src="../../css/common.min.js"></script> 
 <span id="elementor-device-mode" class="elementor-screen-only"></span> 
 <script type="text/javascript" src="../../css/special.js"></script> 
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/646ec108ad80445890eef469/1h18aqkom';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
+
+
+
+
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"484f86f9f57a428e921c81286183faf3","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+
+
+
+
+
+<!-- GMT -->
+
+
+
+
+
+
+
+
 </body>
 
 <!-- Mirrored from www.estoolcarbide.com/product/internal-threading-carbide-insert-16ir1.0iso-china-factory-cutting-tools-p-1247/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 04 Apr 2026 22:19:36 GMT -->

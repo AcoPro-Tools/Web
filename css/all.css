@@ -411,9 +411,13 @@ template {
 .swiper-button-prev:before,
 .sys_btn:after,
 .web_head .btn--search:before {
-    font-family: fontawesome
+    font-family: fontawesome;
 }
 
+.fa:hover:before{
+    color: #24ccf1;
+    transition: 0.2s;
+}
 :root {
     --swiper-theme-color: none
 }
@@ -1741,8 +1745,10 @@ textarea::-moz-placeholder {
 
 
 .p_list-01 ul li:hover a {
-    border: 1px solid #eee;
-    transition: all .3s
+    transform: translateY(-10px);
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0px 0px 13px 3px #c5ebff;
+
 }
 
 .p_list-01 ul li b {
@@ -2453,12 +2459,12 @@ textarea::-moz-placeholder {
 .nl_lists-01 ul li span {
     width: 100px;
     position: absolute;
-    bottom: 25px;
+    bottom: -212px;
     right: 20px;
     color: #fea501;
     padding: 8px 0;
     text-align: center;
-    border-bottom: 2px solid #fea501
+    border-bottom: 2px solid #fea501;
 }
 
 .nl_lists-01 ul li span:hover {
@@ -6332,18 +6338,23 @@ pre {
 
 /*template-background-color*/
 
-.hnav-60 ul li:hover a,
+.hnav-60 ul li:hover a{
+    color: #ffffff;
+}
 .hnav-60 ul li ul li:hover a,
 .hnav-60 ul li ul li ul li:hover a {
-    color: #ffffff;
+    color: #00a8ff;
 }
 
 
 .hbotton-60 {
     background: linear-gradient(135deg, #00d2ffa8 0%, #6d6f79d6 60%);
     box-shadow: 0px -2px 11px 1px #313030 !important;
-    backdrop-filter: blur(5px) saturate(600%) brightness(2.2);
+    backdrop-filter: blur(15px) saturate(600%) brightness(2.2);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .hnav-60 ul li ul {
@@ -6717,3 +6728,208 @@ h1 {
     transform: translate(60px, -32px) translateZ(0);
   }
 }
+
+
+
+/* 
+/* --- 1. إخفاء عناصر جوجل المزعجة إجبارياً --- */
+.goog-te-banner-frame, .goog-te-banner, .skiptranslate iframe {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+body {
+    top: 0 !important;
+    position: static !important;
+}
+
+/* إخفاء الأيقونة العائمة الصغيرة التي تظهر في الزاوية */
+.goog-te-gadget-icon, .goog-te-gadget-simple img, #google_translate_element img {
+    display: none !important;
+}
+
+/* --- 2. تنسيق حاوية الزر الخاصة بموقعك --- */
+.aco-translate-container {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 15px;
+}
+
+/* تنسيق القائمة المنسدلة لتناسب الستايل الصناعي */
+#google_translate_element select {
+    background: rgba(255, 255, 255, 0.1) !important; /* خلفية شفافة */
+    backdrop-filter: blur(8px); /* تأثير زجاجي */
+    color: #ffffff !important; /* نص أبيض */
+    border: 1px solid #00a3e0 !important; /* إطار أزرق مطابق للوجو */
+    border-radius: 4px;
+    padding: 4px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+    font-family: inherit;
+}
+
+/* إخفاء نصوص جوجل التوضيحية داخل الزر */
+.goog-te-gadget {
+    font-size: 0 !important;
+    color: transparent !important;
+}
+
+
+/* 1. إخفاء نافذة الـ Hover (Tooltip) تماماً */
+#goog-gt-tt, .goog-te-balloon-frame, .goog-tooltip, .goog-tooltip:hover {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+/* 2. إخفاء تظليل النصوص عند الوقوف عليها */
+.goog-text-highlight {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    box-sizing: border-box !important;
+    -webkit-box-shadow: none !important;
+}
+
+/* 3. منع جوجل من إضافة "إطار" أو تأثير عند التمرير */
+font {
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+
+
+
+
+
+
+
+/* تنسيق الصندوق الخارجي */
+#google_translate_element .goog-te-gadget-simple {
+    background-color: rgba(255, 255, 255, 0.1) !important; /* خلفية زجاجية */
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(0, 163, 224, 0.5) !important; /* إطار أزرق خفيف */
+    padding: 5px 10px !important;
+    border-radius: 4px !important;
+    font-family: 'Cairo', sans-serif !important;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    top: 27px;
+}
+
+/* تنسيق النص داخل الزر (اختيار اللغة) */
+#google_translate_element .goog-te-menu-value span {
+    color: #ffffff !important; /* جعل النص أبيض */
+    font-size: 14px !important;
+    font-weight: 500;
+}
+
+/* إخفاء السهم الصغير الافتراضي ورموز جوجل */
+#google_translate_element .goog-te-gadget-icon, 
+#google_translate_element img, 
+.goog-te-menu-value img {
+    display: none !important;
+}
+
+
+
+
+/* تنسيق قائمة اللغات نفسها */
+.goog-te-menu-frame {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+    border: 1px solid #00a3e0 !important;
+    border-radius: 8px !important;
+}
+
+.goog-te-menu2 {
+    background-color: #2c2f33 !important; /* لون داكن ليناسب الثيم الصناعي */
+    border: none !important;
+}
+
+/* تنسيق روابط اللغات داخل القائمة */
+.goog-te-menu2-item div, .goog-te-menu2-item:link div {
+    color: white !important;
+    background-color: transparent !important;
+    font-family: 'Cairo', sans-serif !important;
+}
+
+/* تأثير عند تمرير الماوس فوق لغة معينة */
+.goog-te-menu2-item:hover div {
+    background-color: #00a3e0 !important; /* تحويلها للأزرق عند الـ Hover */
+    color: white !important;
+}
+
+
+
+
+
+.goog-te-gadget-simple .goog-te-menu-value {
+    border-left: none !important;
+    margin-left: 0 !important;
+}
+
+/* إخفاء نص "Powered by Google" إذا كنت تريد تصميماً أنظف */
+.goog-te-gadget {
+    font-size: 0 !important;
+}
+
+
+
+
+/* تنسيق الإطار الخارجي للقائمة المفتوحة */
+.goog-te-menu-frame {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4) !important; /* ظل قوي عشان يبرز */
+    border: 1px solid #00a3e0 !important; /* إطار أزرق متناسق */
+    border-radius: 8px !important;
+}
+
+/* تنسيق المحتوى الداخلي للقائمة */
+iframe.goog-te-menu-frame + div, 
+.goog-te-menu2 {
+    background-color: #23272a !important; /* لون داكن فخم بدلاً من الأبيض */
+    border: none !important;
+    padding: 10px !important;
+}
+
+/* تنسيق نصوص اللغات (العربية، الإنجليزية...) داخل المربع */
+.goog-te-menu2-item div, 
+.goog-te-menu2-item:link div, 
+.goog-te-menu2-item:visited div {
+    color: #ffffff !important; /* نص أبيض */
+    background-color: transparent !important;
+    font-family: 'Cairo', sans-serif !important;
+    padding: 8px 15px !important;
+    transition: 0.3s;
+}
+
+/* التنسيق عند تمرير الماوس فوق لغة (Hover) */
+.goog-te-menu2-item:hover div {
+    background-color: #00a3e0 !important; /* يتحول للون الأزرق الخاص بك */
+    color: white !important;
+    border-radius: 4px;
+}
+
+/* إخفاء سهم جوجل الصغير والخط الفاصل داخل القائمة */
+.goog-te-menu2-item-selected {
+    display: none !important;
+}
+.goog-te-menu2-colpad {
+    width: 0 !important;
+}
+
+
+.VIpgJd-ZVi9od-xl07Ob-lTBxed span{
+    color: white;
+    font-size: 15px;
+}
+.VIpgJd-ZVi9od-xl07Ob-lTBxed :nth-child(3){
+    display: none;
+} */
+
+
+
+
+
+

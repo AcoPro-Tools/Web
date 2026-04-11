@@ -454,6 +454,7 @@
     box-sizing: border-box;
 }
 
+
 .elementor a {
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -902,7 +903,9 @@
     min-height: 1px;
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .elementor-column-gap-narrow>.elementor-row>.elementor-column>.elementor-element-populated {
@@ -983,7 +986,7 @@
 
     .elementor-column.elementor-col-50,
     .elementor-column[data-col="50"] {
-        width: 50%
+        width: 90%
     }
 
     .elementor-column.elementor-col-60,
@@ -1406,18 +1409,17 @@ ul.elementor-icon-list-items.elementor-inline-items .elementor-inline-item {
     overflow: hidden !important;
     border-radius: 24px;
     transition: all 0.3s ease;
-    border: 1px solid #c5ebff;
-    height: 372px;
-    background: linear-gradient(to top, rgb(0 0 0 / 15%) 0%, rgb(0 0 0) 100%);
     overflow: hidden;
     backdrop-filter: blur(6px) saturate(136%) brightness(1.2);
+    padding-bottom: 10px;
+    box-shadow: 0px 0px 8px 0px #a2a2a2;
 }
 
 
 .elementor-grid .elementor-grid-item:hover {
-    transform: translateY(-10px)!important;
-    transition: all 0.2s ease-in-out!important;
-    box-shadow: 0px 0px 13px 3px #c5ebff!important;
+    transform: translateY(-10px) !important;
+    transition: all 0.2s ease-in-out !important;
+    box-shadow: 0px 0px 13px 3px #a2a2a2 !important;
 
 }
 
@@ -1572,7 +1574,7 @@ ul.elementor-icon-list-items.elementor-inline-items .elementor-inline-item {
     }
 
     .elementor-grid-mobile-1 .elementor-grid {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         display: grid
     }
 
@@ -3114,9 +3116,7 @@ ul.elementor-icon-list-items.elementor-inline-items .elementor-inline-item {
     position: static
 }
 
-.elementor-widget-image-carousel .swiper-container .swiper-slide figure {
-    line-height: inherit
-}
+
 
 .elementor-widget-image-carousel .swiper-slide {
     text-align: center
@@ -5484,3 +5484,159 @@ button.swiper-pagination-bullet {
 .elementor-column.elementor-col-40 .elementor-image img{
     border: 3px solid #2376b2;
 }
+
+
+
+.lang-switcher {
+  display: flex;
+    gap: 10px;
+    position: relative;
+    top: 25px;
+}
+
+@media (max-width: 1023px) {
+  .lang-switcher  {
+    top: 20px !important;
+    gap: 6px !important;
+  }
+}
+
+.lang-switcher {
+    top: 25px;
+}
+.lang-switcher :nth-child(1) , :nth-child(2) {
+  font-size: large;
+}
+
+
+.lang-switcher button {
+  padding: 8px 16px;
+  border: none;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  
+}
+
+.lang-switcher button:hover {
+    color: #5bdbf7;
+  
+}
+
+
+
+/* 1. إخفاء أيقونة جوجل واللوجو تماماً */
+.goog-te-gadget img, 
+.goog-te-gadget span,
+.goog-logo-link {
+    display: none !important;
+}
+
+/* 2. إخفاء الإطار العلوي والسفلي الذي يحقنه جوجل خلف الناف بار */
+.goog-te-banner-frame, 
+#goog-gt-tt, 
+.goog-te-balloon-frame {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+/* 3. منع إزاحة الصفحة لأسفل (التي تجعل العناصر تظهر خلف الناف بار الشفاف) */
+body {
+    top: 0 !important;
+}
+
+/* 4. تنظيف صندوق الترجمة ليكون نصوص فقط بدون زخرفة جوجل */
+.goog-te-gadget {
+    color: transparent !important; /* إخفاء كلمة "Powered by" */
+    font-size: 0 !important;
+}
+
+.goog-te-gadget .goog-te-combo {
+    font-size: 14px !important; /* إعادة إظهار القائمة فقط لو كنت تستخدمها */
+    color: #333 !important;
+}
+
+/* 5. إخفاء شريط المساعدة الذي يظهر عند الوقوف بالماوس على النصوص المترجمة */
+.goog-text-highlight {
+    background: none !important;
+    box-shadow: none !important;
+}
+
+
+/* إخفاء الصندوق الأسود/الأبيض الذي يظهر خلف الزجاج */
+#goog-gt-tt, 
+.goog-te-balloon-frame,
+#goog-gt-inside,
+.template-container {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+/* التأكد من أن الناف بار الخاص بك "فوق" كل شيء وبخلفية نظيفة */
+.navbar, .lang-switcher {
+    z-index: 99999999 !important;
+    isolation: isolate; /* تعزل العنصر عن أي تأثيرات خلفية من جوجل */
+}
+
+/* حذف المسافة البيضاء التي تظهر في أعلى الصفحة */
+.skiptranslate {
+    display: none !important;
+}
+
+
+
+
+
+@media (max-width: 1025px) {
+    .elementor-widget-container .elementor-image img{
+        position: relative;
+        top: -184px;
+    }
+    
+}
+
+
+@media (max-width: 1025px) {
+    .elementor-widget-container .elementor-image .attachment-large{
+        position: relative;
+        top: 0px;
+        border: none;
+    }
+}
+
+
+@media (max-width: 1025px) {
+    .elementor-widget-container .elementor-image .imgg{
+        position: relative;
+        top: -177px;
+    }
+}
+
+
+
+
+
+@media (max-width: 1025px) {
+    .elementor-839 .elementor-element.elementor-element-6cbfa35>.elementor-element-populated  ,.elementor-839 .elementor-element.elementor-element-23e11ee>.elementor-element-populated  , .elementor-839 .elementor-element.elementor-element-4e05171>.elementor-element-populated{
+        margin: 0px 26px 0px 80px !important;
+    }
+}
+@media (max-width: 1025px) {
+    .elementor-839 .elementor-element.elementor-element-52f3d7a {
+        margin: 50px 6px 0px 80px !important;
+    }
+}
+@media (max-width: 1025px) {
+    .elementor-839 .elementor-element.elementor-element-4030cfa.elementor-column.elementor-element[data-element_type="column"]>.elementor-column-wrap.elementor-element-populated>.elementor-widget-wrap {
+        padding-left: 80px !important;
+    }
+}
+@media (max-width: 1025px) {
+    .elementor-839 .elementor-element.elementor-element-9b7849b , .elementor-839 .elementor-element.elementor-element-4c245fa {
+        margin-top: -53px !important;
+    }
+}
+
+
