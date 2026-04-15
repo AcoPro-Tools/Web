@@ -913,7 +913,7 @@
 }
 
 .elementor-column-gap-default>.elementor-row>.elementor-column>.elementor-element-populated {
-    padding: 10px 10px 50px;
+    padding: 10px 10px 10px;
 }
 
 .elementor-column-gap-extended>.elementor-row>.elementor-column>.elementor-element-populated {
