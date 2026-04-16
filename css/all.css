@@ -1738,6 +1738,14 @@ textarea::-moz-placeholder {
     background: #0000003f;
     backdrop-filter: blur(6px) saturate(136%) brightness(1.2);
 }
+@media (min-width:1023px){
+    .p_list-01 ul li a:hover {
+    transform: translateY(-10px);
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0px 0px 13px 3px #c5ebff;
+}
+
+}
 
 
 
@@ -2348,46 +2356,27 @@ textarea::-moz-placeholder {
     float: left;
     transition: all .3s;
     margin-bottom: 10px;
-    padding: 10px 2% 35px;
-    position: relative
+    padding: 22px 2% 22px;
+    position: relative;
+    background: #67aeeb24;
+    border-radius: 20px;
 }
+.nl_lists-01 ul li:hover {
+    background: #67aeeb40;
+}
+
 
 .nl_lists-01 ul li a {
     width: 100%;
     display: block
 }
 
-.nl_lists-01 ul li::before {
-    content: "";
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 3px;
-    left: 0
-}
-
-.nl_lists-01 ul li::after {
-    content: "";
-    width: 0;
-    height: 3px;
-    left: 0;
-    position: absolute;
-    bottom: 0;
-    background: #fea501;
-    transition: all .6s
-}
-
-.nl_lists-01 ul li:hover:after {
-    content: "";
-    width: 100%;
-    transition: all .6s;
-    z-index: 2
-}
 
 .nl_lists-01 ul li:nth-child(2n+1) {
-    background: #fff
+    background: #67aeeb24;
+}
+.nl_lists-01 ul li:nth-child(2n+1):hover {
+    background: #67aeeb40;
 }
 
 .nl_lists-01 ul li div {
@@ -2495,7 +2484,7 @@ textarea::-moz-placeholder {
     }
 
     .nl_lists-01 ul li {
-        margin: 5px 0 0
+        margin: 33px 0 0;
     }
 
     .nl_lists-01 ul li div {
@@ -3709,10 +3698,7 @@ textarea::-moz-placeholder {
     margin-bottom: 0
 }
 
-.pm-01-goods-may-like .product_item:hover img {
-    transform: scale(1.1);
-    transition: all .6s ease
-}
+
 
 .product_item_content {
     width: 100%;
@@ -3720,10 +3706,7 @@ textarea::-moz-placeholder {
     overflow: hidden
 }
 
-.pm-01-goods-may-like .product_item:hover .item_title a {
-    color: #a84cbf;
-    text-decoration: underline
-}
+
 
 .pm-01-goods-may-like {
     position: relative;
@@ -3804,8 +3787,11 @@ textarea::-moz-placeholder {
     width: 25%;
     margin: 0;
     padding: 0;
-    background: aqua;
+    background: #0d1c33;
+    border-radius: 20px;
+    color: aliceblue;
 }
+
 
 .pm-01-goods-may-like .product_item .item_title a {
     height: 3em;
@@ -3924,6 +3910,7 @@ textarea::-moz-placeholder {
 .product_item_content img {
     width: 100%;
     padding-bottom: 10px;
+    border-radius: 18px;
 }
 
 .pmore-01-detail .swiper-slide {

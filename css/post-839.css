@@ -1149,9 +1149,6 @@ html[lang="ar"] .elementor-839 .elementor-element.elementor-element-83a1129 .ele
     color: #1F1F1F;
 }
 
-.pm-01-goods-may-like .product_item:hover .item_title a {
-    color: #1F1F1F;
-}
 
 .pm-01-goods-may-like .swiper-button-prev,
 .pm-01-goods-may-like .swiper-button-next {
@@ -1170,7 +1167,7 @@ html[lang="ar"] .elementor-839 .elementor-element.elementor-element-83a1129 .ele
 }
 
 .nl-01-latest li a:hover {
-    color: #d4d4d4;
+    color: #6cbeff;
 }
 
 .nl-01-archive li a:hover {

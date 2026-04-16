@@ -685,7 +685,8 @@ body {
 .nlist-01-con {
 	width: 100%;
 	float: left;
-	margin-top: 20px
+	padding-top: 20px;
+	background: aliceblue;
 }
 
 html[lang="ar"] .nlist-01-con {
