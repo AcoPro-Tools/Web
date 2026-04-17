@@ -415,7 +415,6 @@ template {
 }
 
 .fa:hover:before{
-    color: #24ccf1;
     transition: 0.2s;
 }
 :root {

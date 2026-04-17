@@ -5502,7 +5502,7 @@ button.swiper-pagination-bullet {
 
 .lang-switcher {
   display: flex;
-    gap: 10px;
+    gap: 0px;
     position: relative;
     top: 25px;
 }
@@ -5536,7 +5536,7 @@ button.swiper-pagination-bullet {
   border-radius: 6px;
   cursor: pointer;
   transition: 0.3s;
-  
+  font-size: larger;
 }
 
 .lang-switcher button:hover {
