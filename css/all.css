@@ -3805,7 +3805,8 @@ textarea::-moz-placeholder {
 .pm-01-goods-may-like .swiper-control {
     position: absolute;
     right: 5px;
-    top: 38px
+    top: 38px;
+    direction:ltr
 }
 
 .pm-01-goods-may-like .swiper-button-next,
@@ -6293,12 +6294,16 @@ pre {
     transition: 0.3s;
 }
 .f56_first span , .f56_first b{
-    color: #3a86ff; /* لون أزرق فاتح للعناوين */
-    font-size: 19px;
-    margin-bottom: 25px;
+     /* لون أزرق فاتح للعناوين */
+    font-size: 14px;
+    margin-bottom: 15px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+.f56_first span {
+    color: #3a86ff;
+    font-size: 19px;
 }
 
 .f56_copy span a:hover {

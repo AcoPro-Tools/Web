@@ -404,3 +404,7 @@ html[lang="ar"] .elementor-453 .elementor-element.elementor-element-acf7abf:not(
     padding: 8px 5px;
     flex: 1;
 }
+html[lang="ar"] table {
+    direction: rtl !important;
+    text-align: right !important;
+}
