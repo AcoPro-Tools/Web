@@ -1218,6 +1218,92 @@
 
 
   </script>
+  <script>
+    (function () {
+      function ready(fn) {
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', fn);
+        } else {
+          fn();
+        }
+      }
+
+      function scrollToTop() {
+        try {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } catch (e) {
+          window.scrollTo(0, 0);
+        }
+      }
+
+      ready(function () {
+        var topMenu = document.querySelector('.hnav-60 ul');
+        if (topMenu) {
+          var items = topMenu.querySelectorAll(':scope > li');
+          items.forEach(function (li) {
+            var directSubmenu = li.querySelector(':scope > ul');
+            var a = li.querySelector(':scope > a');
+            if (!directSubmenu || !a) return;
+
+            if (a.querySelector('i.fa-angle-down')) return;
+
+            var b = document.createElement('b');
+            b.innerHTML = '&nbsp;';
+            a.appendChild(b);
+
+            var i = document.createElement('i');
+            i.className = 'fa fa-angle-down';
+            a.appendChild(i);
+          });
+
+          var secondLevelItems = topMenu.querySelectorAll('li ul > li');
+          secondLevelItems.forEach(function (li) {
+            var child = li.querySelector(':scope > ul');
+            var a = li.querySelector(':scope > a');
+            if (!child || !a) return;
+
+            var icon = a.querySelector('i.fa-angle-right, i.fa-angle-down');
+            if (icon) icon.className = 'fa fa-angle-right';
+          });
+        }
+
+        var btn = document.querySelector('.gotops');
+        if (!btn) return;
+
+        if (!btn.hasAttribute('role')) btn.setAttribute('role', 'button');
+        if (!btn.hasAttribute('tabindex')) btn.setAttribute('tabindex', '0');
+
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          scrollToTop();
+        });
+
+        btn.addEventListener('keydown', function (e) {
+          var key = e.key || e.keyCode;
+          if (key === 'Enter' || key === ' ' || key === 13 || key === 32) {
+            e.preventDefault();
+            scrollToTop();
+          }
+        });
+
+        var ticking = false;
+        function updateVisibility() {
+          ticking = false;
+          var y = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+          btn.style.display = y > 200 ? 'inline' : 'none';
+        }
+
+        function onScroll() {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(updateVisibility);
+        }
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+        updateVisibility();
+      });
+    })();
+  </script>
   <!-- message end -->
   <div class="f56">
     <div class="f56_box">
@@ -1252,7 +1338,7 @@
     </div>
     <div class="f56_copy">
       <div class="f56_box"> <b>Copyright © 2026 Acopro Company , All Rights Reserved.</b>
-        <b style="padding-left: 60px;"> <span translate="no">Crafted with ❤️ by ( Anas )</span></b>
+        <b style="padding-left: 60px;"> <span translate="no">Crafted with ❤️ by ( A.W.S )</span></b>
       </div>
     </div>
     <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
